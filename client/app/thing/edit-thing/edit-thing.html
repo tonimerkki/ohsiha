@@ -1,0 +1,26 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>#ohsiha</h1>
+  <!--  <p class="lead">Project work 2016</p> -->
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <form class="thing-form">
+        <h1 class="page-header">Edit <strong>{{vm.awesomeThings.name}}</strong><br></h1>
+        <p class="">
+          <input type="text" name="name" class="form-control" ng-model="$ctrl.data.name"><div style="padding-bottom:0.1%"></div>
+          <textarea rows="4" type="text" name="info" class="form-control" ng-model="$ctrl.data.info"></textarea>
+        </p>
+
+        <div class="pull-right" role="group">
+          <button type="button" class="btn btn-danger" ng-click="$ctrl.cancel()">Cancel</button>
+          <button type="button" class="btn btn-primary" ng-click="$ctrl.save()">Save</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

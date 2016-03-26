@@ -1,0 +1,49 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>#ohsiha</h1>
+  <!--  <p class="lead">Project work 2016</p> -->
+  </div>
+</header>
+
+<div class="container">
+  <form class="thing-form">
+    <h1 class="page-header">Add a new thing</h1>
+    <p class="">
+      <input type="text" class="form-control" placeholder="Title" ng-model="$ctrl.newThing"><div style="padding-bottom:0.1%"></div>
+      <textarea rows="3" class="form-control" placeholder="More info" ng-model="$ctrl.newInfo"></textarea>
+    </p>
+    <span class="input-group pull-right">
+      <button type="submit" class="btn btn-lg btn-primary" ng-click="$ctrl.addThing()">Add</button>
+    </span>
+  </form>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Data</h1>
+   <ul class="col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in $ctrl.awesomeThings">
+      <!--  <li><a ui-sref="thing({ thingId: thing._id })">{{thing.name}}</a></li>-->
+          <!--  <li><a ui-sref="edit({ thingId: thing._id })" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>-->
+
+        <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{thing.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <span>{{thing.info}}
+          <div class="pull-right" role="group">
+            <a ui-sref="edit-thing({ thingId: thing._id })"><button type="button" class="btn btn-primary">Edit</button></a>
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.deleteThing(thing)">Delete</button>
+          </div>
+        </span>
+        </div>
+      </div>
+
+      </ul>
+    </div>
+
+    </div>
+  </div>
+
+</div>
