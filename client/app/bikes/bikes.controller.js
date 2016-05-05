@@ -28,47 +28,21 @@ class BikesComponent {
           var name = that.$filter('filter')(stationData, {station_id: item.station_id})[0];
           that.fullStationData.push({'id' : item.station_id, 'name' : name.name, 'availableBikes': item.num_bikes_available, 'availableDocks': item.num_docks_available});
         });
-        console.log(that.fullStationData);
+        //console.log(that.fullStationData);
 
-        this.$http({
+        that.$http({
             url: '/api/bikes',
             method: 'POST',
             data: that.fullStationData
           }).then(function(response) {
             // success
-            //console.log(response);
-
-            //console.log(response.data);
           },
           function(response) { // optional
+            console.log("error");
             // failed
           //  console.log(response);
           });
       });
-
-    /*  */
-/*
-      this.data.forEach(function(item){
-        that.$http({
-          url: '/api/bikess',
-          method: 'POST',
-          data: { 'id' : item.station_id, 'availableBikes': item.num_bikes_available, 'availableDocks': item.num_docks_available }
-        })
-        .then(function(response) {
-          // success
-          //console.log(response);
-          that.info.push(response.data);
-
-          //console.log(response.data);
-        },
-        function(response) { // optional
-          // failed
-        //  console.log(response);
-        });
-      }); */
-
-
-
 
     });
   }

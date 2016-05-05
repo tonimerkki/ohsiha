@@ -77,9 +77,11 @@ export function show(req, res) {
 // Creates a new Bike in the DB
 export function create(req, res) {
   req.body.forEach(function(oneBike){
-    Bike.create(oneBike)
+    Bike.create(oneBike);
   })
+
   return respondWithResult(res, 201);
+
 }
 
 // Updates an existing Bike in the DB
